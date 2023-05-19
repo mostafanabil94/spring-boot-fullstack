@@ -14,15 +14,14 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>full-stack-professional</name>
 	<description>Demo project for Spring Boot</description>
-	<organization>
-		<name>mostafanabil94</name>
-		<url>amigoscode.com</url>
-	</organization>
 
 	<properties>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<docker.username>mostafanabil94</docker.username>
+		<docker.image.name>full-stack-professional</docker.image.name>
+		<docker.image.tag/>
 	</properties>
 
 	<dependencies>
@@ -180,7 +179,7 @@
 						</platforms>
 					</from>
 					<to>
-						<image>docker.io/${project.organization.name}/${project.artifactId}:${project.version}</image>
+						<image>docker.io/${docker.username}/${docker.image.name}:${docker.image.tag}</image>
 						<tags>
 							<tag>latest</tag>
 						</tags>
