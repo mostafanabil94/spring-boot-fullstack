@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "amigoscode-api",
-      "image": "mostafanabil94/full-stack-professional:latest",
+      "image": "mostafanabil94/full-stack-professional:19.05.2023.19.04.42",
       "essential": true,
       "memory": 512,
       "portMappings": [
