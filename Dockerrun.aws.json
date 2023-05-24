@@ -15,7 +15,7 @@
     },
     {
       "name": "amigoscode-api",
-      "image": "mostafanabil94/full-stack-professional:23.05.2023.21.29.35",
+      "image": "mostafanabil94/full-stack-professional:24.05.2023.22.05.14",
       "essential": true,
       "memory": 512,
       "portMappings": [
