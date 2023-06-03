@@ -18,15 +18,15 @@ import {
   AlertDialogFooter,
   useDisclosure,
 } from "@chakra-ui/react";
-import { deleteCustomer } from "../services/client";
+import { deleteCustomer } from "../../services/client";
 import { useRef } from "react";
 import {
   errorNotification,
   successNotification,
-} from "../services/notification";
+} from "../../services/notification";
 import UpdateCustomerDrawer from "./UpdateCustomerDrawer";
 
-export default function CardWithImage({
+export default function CustomerCard({
   id,
   name,
   email,
@@ -84,7 +84,11 @@ export default function CardWithImage({
         </Box>
         <Stack direction={"row"} justify={"center"} spacing={6} p={4}>
           <Stack>
-            <UpdateCustomerDrawer initialValues={{name, email, age}} customerId={id} fetchCustomers={fetchCustomers}/>
+            <UpdateCustomerDrawer
+              initialValues={{ name, email, age }}
+              customerId={id}
+              fetchCustomers={fetchCustomers}
+            />
           </Stack>
           <Stack>
             <Button

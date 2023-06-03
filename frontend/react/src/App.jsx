@@ -2,8 +2,8 @@ import { Spinner, Text, Wrap, WrapItem } from "@chakra-ui/react";
 import SidebarWithHeader from "./components/shared/Sidebar";
 import { useEffect, useState } from "react";
 import { getCustomers } from "./services/client";
-import CardWithImage from "./components/Card";
-import CreateCustomerDrawer from "./components/CreateCustomerDrawer";
+import CustomerCard from "./components/customer/CustomerCard";
+import CreateCustomerDrawer from "./components/customer/CreateCustomerDrawer";
 import { errorNotification } from "./services/notification";
 
 const App = () => {
@@ -69,7 +69,11 @@ const App = () => {
       <Wrap justify={"center"} spacing={"30px"}>
         {customers.map((customer, index) => (
           <WrapItem key={index}>
-            <CardWithImage {...customer} imageNumber={index} fetchCustomers={fetchCustomers} />
+            <CustomerCard
+              {...customer}
+              imageNumber={index}
+              fetchCustomers={fetchCustomers}
+            />
           </WrapItem>
         ))}
       </Wrap>

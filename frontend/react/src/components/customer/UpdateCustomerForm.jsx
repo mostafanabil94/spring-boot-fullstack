@@ -10,11 +10,11 @@ import {
   Input,
   Stack,
 } from "@chakra-ui/react";
-import { updateCustomer } from "../services/client";
+import { updateCustomer } from "../../services/client";
 import {
   errorNotification,
   successNotification,
-} from "../services/notification";
+} from "../../services/notification";
 
 const MyTextInput = ({ label, ...props }) => {
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]

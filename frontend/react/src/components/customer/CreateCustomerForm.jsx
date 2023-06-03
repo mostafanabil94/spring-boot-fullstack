@@ -11,11 +11,11 @@ import {
   Select,
   Stack,
 } from "@chakra-ui/react";
-import { saveCustomer } from "../services/client";
+import { saveCustomer } from "../../services/client";
 import {
   errorNotification,
   successNotification,
-} from "../services/notification";
+} from "../../services/notification";
 
 const MyTextInput = ({ label, ...props }) => {
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
@@ -60,8 +60,9 @@ const CreateCustomerForm = ({ fetchCustomers }) => {
         initialValues={{
           name: "",
           email: "",
-          age: 0, // added for our checkbox
-          gender: "", // added for our select
+          age: 0,
+          gender: "",
+          password: "",
         }}
         validationSchema={Yup.object({
           name: Yup.string()
@@ -73,6 +74,10 @@ const CreateCustomerForm = ({ fetchCustomers }) => {
           age: Yup.number()
             .min(16, "Must be at least 16 years of age")
             .max(100, "Must be less than 100 years of age")
+            .required("Required"),
+          password: Yup.string()
+            .min(4, "Must be at least 4 characters")
+            .max(15, "Must be less than 15 characters")
             .required("Required"),
           gender: Yup.string()
             .oneOf(["MALE", "FEMALE"], "Invalid gender")
@@ -120,6 +125,13 @@ const CreateCustomerForm = ({ fetchCustomers }) => {
                 name="age"
                 type="number"
                 placeholder="20"
+              />
+
+              <MyTextInput
+                label="Password"
+                name="password"
+                type="password"
+                placeholder={"Pick a secure password"}
               />
 
               <MySelect label="Gender" name="gender">
